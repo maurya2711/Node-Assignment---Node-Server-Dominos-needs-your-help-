@@ -1,6 +1,7 @@
-const { json } = require("express");
 var http = require("http");
+
 const httpServer = http.createServer(handleServer);
+
 function handleServer(req, res) {
   if (req.url === "/welcome") {
     res.statusCode = 200;
@@ -18,3 +19,8 @@ function handleServer(req, res) {
     res.writeHead(404).end("page not found");
   }
 }
+//Create a Node Server that listens to PORT 8081.
+httpServer.listen("8081", () => {
+  console.log("Listening");
+});
+module.exports = httpServer;
