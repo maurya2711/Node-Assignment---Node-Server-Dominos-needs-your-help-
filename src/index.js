@@ -13,7 +13,7 @@ function handleServer(req, res) {
       email: "guestcaredominos@jublfood.com"
     };
     res.statusCode = 200;
-    res.setHeader("Content-Type", "text/json");
+    res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(obj));
   } else {
     res.writeHead(404).end("page not found");
